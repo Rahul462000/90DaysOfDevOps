@@ -14,8 +14,14 @@
 
   ### `ls -l`
 
-  1.- Use `grep` to find all occurrences of the word **"error"**.<br>
+### 1.Use `grep` to find all occurrences of the word **"error"**.<br>
 
-  `grep -i "error" Linux_2k.log `
+#### `grep -i "error" Linux_2k.log `
 
-  2.Use `awk` to extract **timestamps and log levels**.<br>
+### 2.Use `awk` to extract **timestamps and log levels**.<br>
+
+#### `awk '{ print $1, $2, "-", $NF}' Linux_2k.log `
+
+### 3. Use `sed` to replace all IP addresses with **[REDACTED]** for security.<br>
+
+#### `sed -E 's/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[REDACTED]/g' logs.txt`
